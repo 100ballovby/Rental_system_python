@@ -89,8 +89,8 @@ class BikeRental:
             elif rentalBasis == 3:  # недельный тариф
                 bill = (rentalPeriod.days / 7) * 60 * numOfBikes
 
-            # TODO: сделать расчет скидки, если пользователь взял
-            #  в аренду от 3 до 5 велосипедов
+            if 3 <= bill <= 5:
+                bill *= 0.7
 
             print('Thank you for returning bikes.')
             print(f'That would be ${bill}')
